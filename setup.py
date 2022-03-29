@@ -67,9 +67,13 @@ setup(
             'qdrant-client~=0.6.0',
             'strawberry-graphql',
             'elasticsearch>=8.0.1',
+            'pinecone-client~=2.0',
         ],
         'qdrant': [
             'qdrant-client~=0.6.0',
+        ],
+        'pinecone': [
+            'pinecone-client~=2.0',
         ],
         'test': [
             'pytest',

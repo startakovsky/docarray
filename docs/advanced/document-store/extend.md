@@ -73,7 +73,7 @@ class GetSetDelMixin(BaseGetSetDelMixin):
         ...
 ```
 
-You will need to implement the above five functions, which correspond to the logics of get/set/delete items via a string `.id`. They are essential to ensure DocumentArray works.
+You will need to implement the above five functions, which correspond to the logic of get/set/delete items via a string `_id`. They are essential to ensure DocumentArray works.
 
 Note that DocumentArray maintains an offset2ids mapping to allow a list-like behaviour. This mapping is added by 
 inherited from the `BaseGetSetDelMixin`. Therefore, you need to implement methods to persist this mapping, in case you 
@@ -85,7 +85,7 @@ Let's call the above five functions as **three essentials**.
 
 If you aim for high performance, it is recommeneded to implement other methods *without* leveraging your three essentials. They are: `_get_docs_by_ids`, `_del_docs_by_ids`, `_clear_storage`, `_set_doc_value_pairs`, `_set_doc_value_pairs_nested`, `_set_docs_by_ids`. One can get their full signatures from {class}`~docarray.array.storage.base.getsetdel.BaseGetSetDelMixin`. These functions define more fine-grained get/set/delete logics that are frequently used in DocumentArray. 
 
-Implementing them is fully optional, and you can only implement some of them not all of them. If you are not implementing them, those methods will use a generic-but-slow version that is based on your five essentials.
+Implementing them is optional. Any that you do not implement will still be available for the user of your backend, but it will be a generic-but-slow version that is based on your five essentials.
 ```
 
 ```{seealso}

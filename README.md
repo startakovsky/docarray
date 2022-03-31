@@ -86,7 +86,7 @@ Here the feature embedding is done by simple [feature hashing](https://en.wikipe
 
 ### External storage backends for out-of-memory data
 
-When your data is too big, storing in memory is probably not a good idea. DocArray supports [multiple storage backends](https://docarray.jina.ai/advanced/document-store/) such as SQLite, Weaviate, Qdrant and ANNLite. They are all unified under **the exact same user experience and API**. Take the above snippet as an example, you only need to change one line to use SQLite:
+When your data is too big, storing in memory is probably not a good idea. DocArray supports [multiple storage backends](https://docarray.jina.ai/advanced/document-store/) such as SQLite, Pinecone, Weaviate, Qdrant and ANNLite. They are all unified under **the exact same user experience and API**. Take the above snippet as an example, you only need to change one line to use SQLite:
 
 ```python
 da = DocumentArray((Document(text=s.strip()) for s in d.text.split('\n') if s.strip()), storage='sqlite')

@@ -66,7 +66,11 @@ class DocumentArray(AllMixins, BaseDocumentArray):
 
     def __new__(cls, *args, storage: str = 'memory', **kwargs):
         if cls is DocumentArray:
-            if storage == 'memory':
+            if storage == 'pinecone':
+                from .pinecone import DocumentArrayPinecone
+
+                instance = super().__new__(DocumentArrayPinecone)
+            elif storage == 'memory':
                 from .memory import DocumentArrayInMemory
 
                 instance = super().__new__(DocumentArrayInMemory)

@@ -31,37 +31,20 @@ Other functions behave the same as in-memory DocumentArray.
 
 ## Config
 
-Many config options can be set, but the primary ones to consider are:
+Many config options have been implemented, but the primary ones to consider are:
 
-| Name                | Description                                                                     | Default                     |
-|---------------------|---------------------------------------------------------------------------------|-----------------------------|
-| `n_dim`             | Number of dimensions of embeddings to be stored and retrieved                   | **This is always required** |
-| `data_path`         | The data folder where the data is located                                       | **A random temp folder**    |
-| `metric`            | Distance metric to be used during search. Can be 'cosine', 'dot' or 'euclidean' | 'cosine'                    |
+| Name              | Description                                                                                       | Default                     |
+|-------------------|---------------------------------------------------------------------------------------------------|-----------------------------|
+| `init_api_key`    | Pinecone API key available at https://www.pinecone.io/start.                                      | **This is always required** |
+| `index_name`      | The name of the Pinecone Index. Read more [here](https://www.pinecone.io/docs/manage-indexes/).   | **This is always required** |
+| `index_dimension` | A positive integer representing the dimension; Pinecone supports up to 20,000                     | **This is always required** |
+| `index_metric`    | Distance metric to be used during search. Can be 'cosine', 'dotproduct' or 'euclidean'            | 'cosine'                    |
+| `index_type`      | The computation of the distance metric can either be 'approximated' or 'exact'.                   | ''approximated'             |
+| `namespace`       | Each DocumentArray consists of exactly one [namespace](https://www.pinecone.io/docs/namespaces/). | 'jira-example'              |
 
 ## Support
 
-If there are any Pinecone specific questions, we e
+If there are any Pinecone specific questions or clarifications sought, go to the Pinecone [Community Page](https://www.pinecone.io/community/).
 
 
-
-
-    init_api_key: str = None
-    init_host: str = None
-    init_environment: str = None
-    init_project_name: str = None
-    init_log_level: str = None
-    init_openapi_config: pinecone.core.client.configuration.Configuration = None
-    init_config: str = '~/.pinecone'
-    index_name: str = 'jina-example'
-    index_dimension: int = 8
-    index_timeout: int = None
-    index_type: str = "approximated"
-    index_metric: str = "cosine"
-    index_replicas: int = 1
-    index_shards: int = 1
-    index_pods: int = 1
-    index_pod_type: str = 'p1'
-    index_index_config: dict = None
-    namespace: str = ''
 

@@ -117,7 +117,7 @@ class SequenceLikeMixin(BaseSequenceLikeMixin):
     
     def insert(self, index: int, value: 'Document'):
         # Optional. By default, this will add a new item and update offset2id
-        # if you want to customize this, makee sure to handle offset2id
+        # if you want to customize this, make sure to handle offset2id
         ...
 
     def append(self, value: 'Document'):

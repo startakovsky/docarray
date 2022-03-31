@@ -4,6 +4,7 @@
 ```{toctree}
 :hidden:
 
+pinecone
 weaviate
 sqlite
 qdrant
